@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfasts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Завтраки</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="RecipeApp.html">Home</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h4>Вкусно и просто: лучшие рецепты на каждый день</h4>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit...</article>
+            
+            <form id="search-form">
+                <input type="text" placeholder="Введите название блюда" class="input">
+                <button type="submit" class="btn" id="search">Искать</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="recipes" id="recipe">
+        <div class="recipe-cards">
+            <div class="card"></div>
+
+        </div>
+    </section>
+
+    <script>
+        async function fetchMeals(meals) {
+            const apiUrl = "meals.json";
+            
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                
+                displayMeals(data);
+            } catch (error) {
+                console.error("Қате:", error);
+                alert("Тағамды табу мүмкін емес!");
+            }
+        }
+
+        function displayMeals(data) {
+            const mealsContainer = document.querySelector(".recipe-cards");
+            mealsContainer.innerHTML = '';
+
+            data.forEach(meals => {
+                let div = document.createElement("div");
+                div.classList.add("card");
+
+                div.innerHTML = `
+                    <h2>${meals.strMeal}</h2>
+                    <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                    <p>Инструкция приготовления: ${meals.strInstructions}</p>
+                    <p>Время приготовления: ${meals.strTime} минут</p>
+                    <p>Калории: ${meals.strCalories}</p>`;
+
+                mealsContainer.appendChild(div);
+            });
+        }
+
+        document.getElementById("search-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const meals = document.querySelector(".input").value.trim();
+            if (meals) {
+                fetchMeals(meals);
+            } else {
+                alert("Тағам атын енгізіңіз!");
+            }
+        });
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">RecipeApp</div>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <p class="copyright">© 2025 RecipeApp. All rights reserved.</p>
+    </footer>
+</body>
+</html>
