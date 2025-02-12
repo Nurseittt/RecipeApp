@@ -1,0 +1,175 @@
+
+body {
+    margin: 0px;
+    padding-top: 80px;
+    font-family: 'Roboto', sans-serif;
+    background: url('cooking.jpg') center/cover no-repeat;
+    color: #333;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 160, 122, 0.85);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+   
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color:#0066ff;
+}
+
+
+
+
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    /*background: url('cooking.jpg') center/cover no-repeat;*/
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    justify-content: space-between;
+    /*background: linear-gradient(to bottom, #FFF8E7, #FAF3E0);*/
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero h4 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.hero .input {
+    width: 50%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid silver;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #FF7F32;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #E56725;
+}
+
+
+
+
+
+
+
+
+.recipe-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.card:hover {
+    transform: scale(1.035);
+}
+
+
+
+footer {
+/*background: linear-gradient(to right, #4CAF50, #2E7D32);*/
+    background: rgba(255, 160, 122, 0.85);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.footer .logo{
+    text-align: center;
+}
+.footer-links a {
+    color: #0066ff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
